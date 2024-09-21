@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aus.restaurant.controllers.PaymentController">
+    <top>
+        <AnchorPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="226.0" layoutY="31.0" text="Payment" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <left>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <children>
+                <Label fx:id="availableCreditsLabel" text="Available Credits:" visible="false" />
+                <Label fx:id="availableCreditsValueLabel" visible="false" />
+                <CheckBox fx:id="useCreditsCheckBox" text="Use Credits" visible="false" onAction="#handleUseCreditsCheckBox" />
+                <Label fx:id="creditsToUseLabel" text="Credits to Use:" visible="false" />
+                <TextField fx:id="creditsToUseField" visible="false" />
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10" style="-fx-padding: 20;">
+            <children>
+                <Label text="Order Number: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="orderNumberLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Card Number:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="cardNumberField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Expiry Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <DatePicker fx:id="expiryDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="CVV:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <PasswordField fx:id="cvvField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label text="Order Date:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <DatePicker fx:id="orderDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <Label text="Order Time (HH:mm):" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="orderTimeField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                <Label text="Total Price:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label fx:id="totalPriceLabel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="submitPaymentButton" layoutX="170.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSubmitPayment" prefHeight="29.0" prefWidth="124.0" style="-fx-background-color: lightblue;" text="Submit Payment">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="backButton" layoutX="300.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleBackToBasket" prefHeight="29.0" prefWidth="141.0" style="-fx-background-color: FFCCCB;" text="Back to Basket">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

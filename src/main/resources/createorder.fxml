@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aus.restaurant.controllers.CreateOrderController">
+    <top>
+        <AnchorPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="226.0" layoutY="31.0" text="Create Order" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <GridPane alignment="CENTER" hgap="10" style="-fx-padding: 20;" vgap="10">
+            <children>
+                <Label text="Burritos:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="burritosField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Fries:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="friesField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Soda:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="sodaField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Meal:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="mealField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Button fx:id="addToBasketButton" prefHeight="29.0" prefWidth="156.0" style="-fx-background-color: lightblue;" text="Add to Basket" onAction="#handleAddToBasket" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+
+                <Button fx:id="backButton" prefHeight="29.0" prefWidth="155.0" style="-fx-background-color: FFCCCB;" text="Back to Dashboard" onAction="#handleBackToDashboard" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>

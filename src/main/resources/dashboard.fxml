@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aus.restaurant.controllers.DashboardController">
+    <top>
+        <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="337.0" layoutY="31.0" text="Dashboard" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="welcomeLabel" layoutX="20.0" layoutY="5.0" text="Welcome, [First Name] [Last Name]!" textFill="BLACK">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <VBox layoutX="20.0" layoutY="48.0" spacing="10">
+                    <children>
+                        <HBox spacing="25.0">
+                            <Button fx:id="editProfileButton" mnemonicParsing="false" onAction="#handleEditProfile" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="Edit Profile" />
+                            <Button fx:id="createOrderButton" mnemonicParsing="false" onAction="#handleCreateOrder" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: lightblue;" text="Create Order" />
+                            <Button fx:id="viewBasketButton" mnemonicParsing="false" onAction="#handleViewBasket" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="View Basket" />
+                            <Button fx:id="viewOrdersButton" mnemonicParsing="false" onAction="#handleViewOrders" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="View Orders" />
+                        </HBox>
+                        <HBox spacing="25.0">
+                            <Button fx:id="collectOrderButton" mnemonicParsing="false" onAction="#handleCollectOrder" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="Collect Order" />
+                            <Button fx:id="cancelOrderButton" mnemonicParsing="false" onAction="#handleCancelOrder" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: lightblue;" text="Cancel Order" />
+                            <Button fx:id="exportOrderButton" mnemonicParsing="false" onAction="#handleExportOrder" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: lightblue;" text="Export Order" />
+                            <Button fx:id="upgradeVipButton" mnemonicParsing="false" onAction="#handleUpgradeToVip" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: lightblue;" text="Upgrade to VIP" />
+                        </HBox>
+                        <Label fx:id="creditsLabel" layoutX="20.0" layoutY="200.0" text="" /> <!-- Add this line -->
+                    </children>
+                </VBox>
+                <Label layoutX="20.0" layoutY="133.0" text="Active Orders:" />
+                <TableView fx:id="activeOrdersTableView" layoutX="20.0" layoutY="158.0" prefHeight="149.0" prefWidth="760.0">
+                    <columns>
+                        <TableColumn fx:id="orderNumberColumn" prefWidth="189.3" text="Order Number" />
+                        <TableColumn fx:id="foodItemsColumn" prefWidth="189.3" text="Ordered Food Items" />
+                        <TableColumn fx:id="totalPriceColumn" prefWidth="189.0" text="Total Price" />
+                        <TableColumn fx:id="statusColumn" prefWidth="189.0" text="Order Status" />
+                    </columns>
+                </TableView>
+                <Button fx:id="logoutButton" layoutX="710.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="29.0" prefWidth="70.0" style="-fx-background-color: FFCCCB;" text="Logout">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="60.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>

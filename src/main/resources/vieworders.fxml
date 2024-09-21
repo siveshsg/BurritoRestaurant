@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aus.restaurant.controllers.ViewOrderController">
+    <top>
+        <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="330.0" layoutY="31.0" text="View Orders" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="ordersTableView" layoutX="56.0" layoutY="23.0" prefHeight="238.0" prefWidth="689.0">
+                    <columns>
+                        <TableColumn fx:id="orderDateColumn" prefWidth="229.0" text="Order Date" />
+                        <TableColumn fx:id="totalPriceColumn" prefWidth="229.0" text="Total Price" />
+                        <TableColumn fx:id="statusColumn" prefWidth="229.0" text="Status" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="60.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" layoutY="16.0" prefWidth="800.0" spacing="10">
+                    <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackToDashboard" prefHeight="29.0" prefWidth="170.0" style="-fx-background-color: FFCCCB;" text="Back to Dashboard">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

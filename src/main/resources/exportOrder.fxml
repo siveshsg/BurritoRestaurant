@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aus.restaurant.controllers.ExportOrderController">
+    <top>
+        <AnchorPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="221.0" layoutY="31.0" text="Export Orders" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <children>
+                <TableView fx:id="exportOrdersTableView" prefHeight="200.0" prefWidth="550.0">
+                    <columns>
+                        <TableColumn fx:id="orderNumberColumn" prefWidth="100.0" text="Order Number" />
+                        <TableColumn fx:id="dateTimeColumn" prefWidth="150.0" text="Order Time" />
+                        <TableColumn fx:id="collectTimeColumn" prefWidth="150.0" text="Collect Time" />
+                        <TableColumn fx:id="totalPriceColumn" prefWidth="100.0" text="Total Price" />
+                        <TableColumn fx:id="statusColumn" prefWidth="150.0" text="Status" />
+                    </columns>
+                </TableView>
+                <HBox spacing="10">
+                    <CheckBox fx:id="orderNumberCheckBox" text="Order Number" />
+                    <CheckBox fx:id="priceCheckBox" text="Price" />
+                    <CheckBox fx:id="statusCheckBox" text="Status" />
+                    <CheckBox fx:id="orderTimeCheckBox" text="Order Time" />
+                    <CheckBox fx:id="collectTimeCheckBox" text="Collect Time" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label prefHeight="30.0" prefWidth="56.0" text="File Name:" />
+                    <TextField fx:id="fileNameField" promptText="Enter file name" />
+                </HBox>
+                <Button fx:id="chooseDestinationButton" prefWidth="200.0" style="-fx-background-color: lightblue;" text="Choose Destination" onAction="#handleChooseDestination" />
+                <Button fx:id="exportButton" prefWidth="200.0" style="-fx-background-color: lightblue;" text="Export to CSV" onAction="#handleExportToCSV" />
+                <Button fx:id="backButton" prefWidth="200.0" style="-fx-background-color: FFCCCB;" text="Back to Dashboard" onAction="#handleBackToDashboard" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
